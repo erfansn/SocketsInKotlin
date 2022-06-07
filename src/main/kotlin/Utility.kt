@@ -1,5 +1,3 @@
-package udp
-
 import java.io.InputStream
 import java.net.InetAddress
 import javax.sound.sampled.AudioFormat
@@ -9,7 +7,7 @@ import javax.sound.sampled.SourceDataLine
 
 object Utility {
 
-    val localHostIp: InetAddress = InetAddress.getLocalHost()
+    val localHostAddress: InetAddress = InetAddress.getLocalHost()
 
     fun openResourceFile(path: String): InputStream? {
         val context = Thread.currentThread().contextClassLoader

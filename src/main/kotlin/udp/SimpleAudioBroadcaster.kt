@@ -1,11 +1,15 @@
 package udp
 
+import BUFFER_SIZE
+import PORT
+import Utility
+import Utility.localHostAddress
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 
-class SimpleAudioStreamServer {
+class SimpleAudioBroadcaster {
 
     private val socket = DatagramSocket()
 
@@ -19,7 +23,7 @@ class SimpleAudioStreamServer {
                 val datagramPacket = DatagramPacket(
                     message,
                     message.size,
-                    Utility.localHostIp,
+                    localHostAddress,
                     PORT
                 )
                 withContext(Dispatchers.IO) {

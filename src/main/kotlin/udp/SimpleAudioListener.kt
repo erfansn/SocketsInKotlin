@@ -1,12 +1,14 @@
 package udp
 
+import BUFFER_SIZE
+import PORT
 import kotlinx.coroutines.*
-import udp.Utility.openAndStartSpeakers
-import udp.Utility.wavAudioFormat
+import Utility.openAndStartSpeakers
+import Utility.wavAudioFormat
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 
-class SimpleAudioStreamClient {
+class SimpleAudioListener {
 
     private val speakers = openAndStartSpeakers(wavAudioFormat)
 
